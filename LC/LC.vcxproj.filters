@@ -63,6 +63,42 @@
     <ClCompile Include="_20有效的括号.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="_21合并两个有序链表.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="_23合并K个升序链表.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="_24两两交换链表中的节点.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="_25K个一组翻转链表.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="_263_丑数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="_26删除有序数组中的重复项.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="_27移除元素.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="_456_132模式.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="_82删除排序链表中的重复元素II.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="_83删除排序链表中的重复元素.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="面试题17_21_直方图的水量.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="_1011_在D天内送达包裹的能力.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ListNode.h">
@@ -108,6 +144,42 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="_20有效的括号.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="_21合并两个有序链表.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="_23合并K个升序链表.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="_24两两交换链表中的节点.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="_25K个一组翻转链表.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="_263_丑数.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="_26删除有序数组中的重复项.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="_27移除元素.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="_456_132模式.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="_82删除排序链表中的重复元素II.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="_83删除排序链表中的重复元素.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="面试题17_21_直方图的水量.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="_1011_在D天内送达包裹的能力.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

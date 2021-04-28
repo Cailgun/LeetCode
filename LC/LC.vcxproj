@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="LC.cpp" />
     <ClCompile Include="ListNode.cpp" />
+    <ClCompile Include="_1011_在D天内送达包裹的能力.cpp" />
     <ClCompile Include="_12整数转罗马数字.cpp" />
     <ClCompile Include="_13罗马数字转整数.cpp" />
     <ClCompile Include="_14最长公共前缀.cpp" />
@@ -169,6 +170,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ListNode.h" />
+    <ClInclude Include="_1011_在D天内送达包裹的能力.h" />
     <ClInclude Include="_12整数转罗马数字.h" />
     <ClInclude Include="_13罗马数字转整数.h" />
     <ClInclude Include="_14最长公共前缀.h" />
