@@ -4,85 +4,51 @@
 #include <functional>
 using namespace std;
 
-int load(std::vector<int>& weights, int capacity)
+int getBinaryNum(int left, int right)
 {
-	int count = 0;
-	int day = 1;
-	for (auto iter : weights)
-	{
-		if (count + iter > capacity)
-		{
-			count = 0;
-			day++;
-		}
-		count += iter;
-	}
-	return day;
+	return (left + right) / 2;
 }
-
-int findCapacity(int left, int right, std::vector<int>& weights, int D)
-{
-	if (left == right)
+bool judgeSquareSum(int c) {
+	if (c < 0)
 	{
-		return left;
-	}
-	if (abs(left - right) == 1)
-	{
-		return (load(weights, left) == D) ? left : right;
+		return false;
 	}
 
-	int mid = (left + right) / 2;
-	int currentD = load(weights, mid);
-	if (currentD > D)
+	int root = sqrt(c);
+	if ((double)root == sqrt(c))
 	{
-		return findCapacity(mid, right, weights, D);
-	}
-	else if (currentD < D)
-	{
-		return findCapacity(left, mid, weights, D);
+		return true;
 	}
 
-	int lastD = load(weights, mid - 1);
-
-	if (lastD == D)
+	for (int i = 0; i <= root; ++i)
 	{
-		return findCapacity(left, mid, weights, D);
-	}
-	else
-	{
-		return mid;
-	}
-}
-
-int shipWithinDays(std::vector<int>& weights, int D) {
-	size_t size = weights.size();
-	if (size == 0)
-	{
-		return 0;
-	}
-	int capacity = 1;
-	for (auto iter : weights)
-	{
-		if (iter > capacity)
-			capacity = iter;
-	}
-	int lastCapacity = capacity;
-	while (true)
-	{
-		int currentD = load(weights, capacity);
-		if (currentD <= D)
+		int left = i;
+		int right = root;
+		int mid = (i + root) / 2;
+		do
 		{
-			return findCapacity(lastCapacity, capacity, weights, D);
-		}
-		lastCapacity = capacity;
-		capacity *= 2;
+			int sum = i * i + mid * mid;
+			if (sum > c)
+			{
+				right = mid - 1;
+				mid = getBinaryNum(left, right);
+			}
+			else if (sum < c)
+			{
+				left = mid + 1;
+				mid = getBinaryNum(left, right);
+			}
+			else
+			{
+				return true;
+			}
+		} while (left <= right);
 	}
+	return false;
 }
 
 int main()
 {
-	vector<int> v({10, 50, 100, 100, 50, 100, 100, 100});
-	int i = shipWithinDays(v, 5);
-
+	judgeSquareSum(173);
 	return 0;
 }
