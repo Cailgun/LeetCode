@@ -99,6 +99,15 @@
     <ClInclude Include="面试题17_21_直方图的水量.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="_1486_数组异或操作.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="_1720_解码异或后的数组.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="_740_删除并获得点数.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="_1_两数之和.cpp">
@@ -186,6 +195,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="面试题17_21_直方图的水量.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="_1486_数组异或操作.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="_1720_解码异或后的数组.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="_740_删除并获得点数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

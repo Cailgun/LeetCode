@@ -23,9 +23,11 @@
     <ClInclude Include="_1011_在D天内送达包裹的能力.h" />
     <ClInclude Include="_12_整数转罗马数字.h" />
     <ClInclude Include="_13_罗马数字转整数.h" />
+    <ClInclude Include="_1486_数组异或操作.h" />
     <ClInclude Include="_14_最长公共前缀.h" />
     <ClInclude Include="_15_三数之和.h" />
     <ClInclude Include="_16_最接近的三数之和.h" />
+    <ClInclude Include="_1720_解码异或后的数组.h" />
     <ClInclude Include="_17_电话号码的字母组合.h" />
     <ClInclude Include="_18_四数之和.h" />
     <ClInclude Include="_19_删除链表的倒数第N个结点.h" />
@@ -41,6 +43,7 @@
     <ClInclude Include="_341_扁平化嵌套列表迭代器.h" />
     <ClInclude Include="_456_132模式.h" />
     <ClInclude Include="_633_平方数之和.h" />
+    <ClInclude Include="_740_删除并获得点数.h" />
     <ClInclude Include="_82_删除排序链表中的重复元素II.h" />
     <ClInclude Include="_83_删除排序链表中的重复元素.h" />
     <ClInclude Include="_8_字符串转换整数.h" />
@@ -54,9 +57,11 @@
     <ClCompile Include="_1011_在D天内送达包裹的能力.cpp" />
     <ClCompile Include="_12_整数转罗马数字.cpp" />
     <ClCompile Include="_13_罗马数字转整数.cpp" />
+    <ClCompile Include="_1486_数组异或操作.cpp" />
     <ClCompile Include="_14_最长公共前缀.cpp" />
     <ClCompile Include="_15_三数之和.cpp" />
     <ClCompile Include="_16_最接近的三数之和.cpp" />
+    <ClCompile Include="_1720_解码异或后的数组.cpp" />
     <ClCompile Include="_17_电话号码的字母组合.cpp" />
     <ClCompile Include="_18_四数之和.cpp" />
     <ClCompile Include="_19_删除链表的倒数第N个结点.cpp" />
@@ -72,6 +77,7 @@
     <ClCompile Include="_341_扁平化嵌套列表迭代器.cpp" />
     <ClCompile Include="_456_132模式.cpp" />
     <ClCompile Include="_633_平方数之和.cpp" />
+    <ClCompile Include="_740_删除并获得点数.cpp" />
     <ClCompile Include="_82_删除排序链表中的重复元素II.cpp" />
     <ClCompile Include="_83_删除排序链表中的重复元素.cpp" />
     <ClCompile Include="_8_字符串转换整数.cpp" />

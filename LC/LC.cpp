@@ -2,53 +2,69 @@
 #include <vector>
 #include <io.h>
 #include <functional>
+#include <algorithm>
 using namespace std;
 
-int getBinaryNum(int left, int right)
-{
-	return (left + right) / 2;
-}
-bool judgeSquareSum(int c) {
-	if (c < 0)
-	{
-		return false;
-	}
+int deleteAndEarn(std::vector<int>& nums) {
+	std::sort(nums.begin(), nums.end());
+	std::vector<std::pair<int, int>> ary;
 
-	int root = sqrt(c);
-	if ((double)root == sqrt(c))
+	int size = nums.size();
+	if (size == 1)
 	{
-		return true;
+		return nums[0];
 	}
-
-	for (int i = 0; i <= root; ++i)
+	int last = nums[0];
+	int cnt = 1;
+	for (int i = 1; i < size; ++i)
 	{
-		int left = i;
-		int right = root;
-		int mid = (i + root) / 2;
-		do
+		if (nums[i] == last)
 		{
-			int sum = i * i + mid * mid;
-			if (sum > c)
-			{
-				right = mid - 1;
-				mid = getBinaryNum(left, right);
-			}
-			else if (sum < c)
-			{
-				left = mid + 1;
-				mid = getBinaryNum(left, right);
-			}
-			else
-			{
-				return true;
-			}
-		} while (left <= right);
+			cnt++;
+		}
+		else
+		{
+			ary.push_back(std::pair<int, int>(last, cnt * last));
+			last = nums[i];
+			cnt = 1;
+		}
+		if (i == size - 1)
+		{
+			ary.push_back(std::pair<int, int>(last, cnt * last));
+		}
 	}
-	return false;
+
+	auto compare = [&](std::pair<int, int> frt, std::pair<int, int> sec)
+	{
+		return frt.second > sec.second;
+	};
+	std::sort(ary.begin(), ary.end(), compare);
+	std::vector<int> hit;
+	int ret = 0;
+	for (auto iter : ary)
+	{
+		bool hitTest = false;
+		for (auto iterHit : hit)
+		{
+			if (iterHit == iter.first)
+			{
+				hitTest = true;
+				break;
+			}
+		}
+		if (!hitTest)
+		{
+			ret += iter.second;
+			hit.push_back(iter.first + 1);
+			hit.push_back(iter.first - 1);
+		}
+	}
+	return ret;
 }
 
 int main()
 {
-	judgeSquareSum(173);
+	std::vector<int> v({ 8,3,4,7,6,6,9,2,5,8,2,4,9,5,9,1,5,7,1,4 });
+	deleteAndEarn(v);
 	return 0;
 }
