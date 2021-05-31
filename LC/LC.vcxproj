@@ -42,6 +42,8 @@
     <ClInclude Include="_27_移除元素.h" />
     <ClInclude Include="_341_扁平化嵌套列表迭代器.h" />
     <ClInclude Include="_456_132模式.h" />
+    <ClInclude Include="_461_汉明距离.h" />
+    <ClInclude Include="_477_汉明距离总和.h" />
     <ClInclude Include="_633_平方数之和.h" />
     <ClInclude Include="_740_删除并获得点数.h" />
     <ClInclude Include="_82_删除排序链表中的重复元素II.h" />
@@ -76,6 +78,8 @@
     <ClCompile Include="_27_移除元素.cpp" />
     <ClCompile Include="_341_扁平化嵌套列表迭代器.cpp" />
     <ClCompile Include="_456_132模式.cpp" />
+    <ClCompile Include="_461_汉明距离.cpp" />
+    <ClCompile Include="_477_汉明距离总和.cpp" />
     <ClCompile Include="_633_平方数之和.cpp" />
     <ClCompile Include="_740_删除并获得点数.cpp" />
     <ClCompile Include="_82_删除排序链表中的重复元素II.cpp" />
@@ -183,6 +187,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

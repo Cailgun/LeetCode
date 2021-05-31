@@ -8,7 +8,6 @@ class _740_删除并获得点数
 		int deleteAndEarn(std::vector<int>& nums) {
 			std::sort(nums.begin(), nums.end());
 			std::vector<std::pair<int, int>> ary;
-
 			int size = nums.size();
 			if (size == 1)
 			{
@@ -36,31 +35,64 @@ class _740_删除并获得点数
 
 			auto compare = [&](std::pair<int, int> frt, std::pair<int, int> sec)
 			{
-				return frt.second > sec.second;
+				return frt.first < sec.first;
 			};
-			std::sort(ary.begin(), ary.end(), compare);
-			std::vector<int> hit;
-			int ret = 0;
-			for (auto iter : ary)
+			auto getContinuously = [&](std::vector<std::pair<int, int>> vec)
 			{
-				bool hitTest = false;
-				for (auto iterHit : hit)
+				std::vector<std::pair<int, int>> ret;
+				int size = vec.size();
+				int start = 0;
+				int end = 0;
+				int current = vec[0].first;
+				int temp = 0;
+				for (int i = 0; i < size; ++i, ++temp)
 				{
-					if (iterHit == iter.first)
+					if (vec[i].first == temp + current)
 					{
-						hitTest = true;
-						break;
+						end = i;
+					}
+					else
+					{
+						ret.push_back(std::pair<int, int>(start, end));
+						start = end + 1;
+						end = start;
+						current = vec[start].first;
+						temp = 0;
+					}
+					if (i == size - 1)
+					{
+						ret.push_back(std::pair<int, int>(start, end));
 					}
 				}
-				if (!hitTest)
+				return ret;
+			};
+			auto getScore = [&](std::vector<std::pair<int, int>> vec, int start, int end)
+			{
+				int ret = vec[start].second;
+				int dec = ret;
+				for (int i = start + 1; i <= end; ++i)
 				{
-					ret += iter.second;
-					hit.push_back(iter.first + 1);
-					hit.push_back(iter.first - 1);
+					if (vec[i].second > dec)
+					{
+						ret = ret + vec[i].second - dec;
+						dec = vec[i].second - dec;
+					}
+					else
+					{
+						dec = 0;
+					}
 				}
+
+				return ret;
+			};
+			std::sort(ary.begin(), ary.end(), compare);
+			int ret = 0;
+			auto interval = getContinuously(ary);
+			for (auto iter : interval)
+			{
+				ret += getScore(ary, iter.first, iter.second);
 			}
 			return ret;
 		}
 	};
 };
-

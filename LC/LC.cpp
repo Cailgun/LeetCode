@@ -5,58 +5,59 @@
 #include <algorithm>
 using namespace std;
 
-int deleteAndEarn(std::vector<int>& nums) {
+int hammingDistance(int x, int y) {
+	auto result = x ^ y;
+	int ret = 0;
+	while (result != 0)
+	{
+		if (result % 2 == 1)
+		{
+			ret++;
+		}
+		result >>= 1;
+	}
+	return ret;
+}
+template<class T>
+int totalHammingDistance(T&& nums) {
+	if (nums.size() <= 1)
+		return 0;
+
 	std::sort(nums.begin(), nums.end());
 	std::vector<std::pair<int, int>> ary;
-
-	int size = nums.size();
-	if (size == 1)
-	{
-		return nums[0];
-	}
 	int last = nums[0];
 	int cnt = 1;
-	for (int i = 1; i < size; ++i)
+	for (int i = 1; i < nums.size(); ++i)
 	{
 		if (nums[i] == last)
 		{
 			cnt++;
+			if (i == nums.size() - 1)
+			{
+				ary.push_back(std::pair<int, int>(last, cnt));
+			}
+			continue;
 		}
 		else
 		{
-			ary.push_back(std::pair<int, int>(last, cnt * last));
+			ary.push_back(std::pair<int, int>(last, cnt));
 			last = nums[i];
 			cnt = 1;
-		}
-		if (i == size - 1)
-		{
-			ary.push_back(std::pair<int, int>(last, cnt * last));
-		}
-	}
-
-	auto compare = [&](std::pair<int, int> frt, std::pair<int, int> sec)
-	{
-		return frt.second > sec.second;
-	};
-	std::sort(ary.begin(), ary.end(), compare);
-	std::vector<int> hit;
-	int ret = 0;
-	for (auto iter : ary)
-	{
-		bool hitTest = false;
-		for (auto iterHit : hit)
-		{
-			if (iterHit == iter.first)
+			if (i == nums.size() - 1)
 			{
-				hitTest = true;
-				break;
+				ary.push_back(std::pair<int, int>(last, cnt));
 			}
 		}
-		if (!hitTest)
+	}
+	if (ary.size() <= 1)
+		return 0;
+
+	int ret = 0;
+	for (int i = 0; i < ary.size(); ++i)
+	{
+		for (int j = i + 1; j < ary.size(); ++j)
 		{
-			ret += iter.second;
-			hit.push_back(iter.first + 1);
-			hit.push_back(iter.first - 1);
+			ret += hammingDistance(ary[i].first, ary[j].first) * ary[i].second * ary[j].second;
 		}
 	}
 	return ret;
@@ -64,7 +65,8 @@ int deleteAndEarn(std::vector<int>& nums) {
 
 int main()
 {
-	std::vector<int> v({ 8,3,4,7,6,6,9,2,5,8,2,4,9,5,9,1,5,7,1,4 });
-	deleteAndEarn(v);
+	std::vector<int> a{ 4, 14, 2 };
+	auto& b = a;
+	totalHammingDistance(a);
 	return 0;
 }

@@ -108,6 +108,12 @@
     <ClInclude Include="_740_删除并获得点数.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="_461_汉明距离.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="_477_汉明距离总和.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="_1_两数之和.cpp">
@@ -204,6 +210,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="_740_删除并获得点数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="_461_汉明距离.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="_477_汉明距离总和.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
